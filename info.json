@@ -3,6 +3,9 @@
   "license": "Proprietary", 
   "author": "deltamethod-id", 
   "github-repository-url": "https://github.com/deltaMethod-id/TopOS/", 
-  "websiteCertificate": "unavailable for now",  
-  "workflows": "Node.js, codeql"
+  "websiteCertificate": "WR1",  
+  "Hosting": "Vercel", 
+  "workflows": "Node.js, codeql", 
+  "protocol": "https", 
+  "main_url": "https://top-os.vercel.app"
 }
