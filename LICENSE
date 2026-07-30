@@ -1,7 +1,153 @@
-All Rights Reserved
+================================================================================
+TOPOS PROPRIETARY SOFTWARE LICENSE AGREEMENT (TPSLA)
+Version 1.0.0
+Effective Date: July 30, 2026
+Copyright (c) 2026 deltamethod-id. All Rights Reserved.
+Country of Origin: Republic of Indonesia
+Project Name: TopOS (HTML5-Based Operating System)
+================================================================================
 
-Copyright (c) 2026 deltaMethod-id
+IMPORTANT: READ CAREFULLY BEFORE ACCESSING, DOWNLOADING, COPYING, OR USING 
+TOPOS ("THE SOFTWARE"). BY ACCESSING, VIEWING, OR EXECUTING THE SOFTWARE, 
+YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT. 
+IF YOU DO NOT AGREE TO THESE TERMS, YOU ARE STRICTLY PROHIBITED FROM USING, 
+COPYING, OR ACCESSING THE SOFTWARE.
 
-All rights reserved. No part of this software, including source code, documentation, or related materials (the "Software"), may be reproduced, distributed, published, displayed, performed, copied, or transmitted in any form or by any means, in whole or in part, without the prior written permission of the copyright holder.
+--------------------------------------------------------------------------------
+SECTION 1: DEFINITIONS
+--------------------------------------------------------------------------------
+1.1 "Licensor" refers to deltamethod-id, the sole creator, owner, and copyright 
+    holder of the TopOS project, operating under the jurisdiction of the 
+    Republic of Indonesia.
+1.2 "Software" refers to TopOS, an operating system environment built to run 
+    exclusively on HTML5, JavaScript, Cascading Style Sheets (CSS), and related 
+    web technologies, including all source code, compiled assets, documentation, 
+    graphics, audio files, interface layouts, and associated files provided 
+    in this repository.
+1.3 "User" or "Licensee" refers to an individual person who accesses or downloads 
+    a copy of the Software for lawful, strictly personal purposes in accordance 
+    with this Agreement.
+1.4 "Personal Use" refers to private, non-commercial, non-public, and individual 
+    evaluation, testing, learning, or execution of the Software on local devices 
+    or private web servers controlled exclusively by the individual User.
+1.5 "Public Use" refers to any deployment, hosting, broadcasting, sharing, 
+    commercial exploitation, modification for public distribution, or 
+    accessibility of the Software via public networks, public-facing web servers, 
+    shared terminals, educational institutions, commercial entities, or any 
+    medium accessible by individuals other than the Licensee.
 
-Requests for permission to use the Software should be directed to the copyright holder at the contact information provided in the repository.
+--------------------------------------------------------------------------------
+SECTION 2: GRANT OF LIMITED PERSONAL LICENSE
+--------------------------------------------------------------------------------
+2.1 Subject to the complete, continuous, and strict compliance with all terms 
+    and conditions set forth in this Agreement, the Licensor hereby grants to 
+    the User a non-exclusive, non-transferable, revocable, limited license to:
+    a) Download and clone a local copy of the Software repository for Personal 
+       Use only.
+    b) Execute the HTML5-based environment of TopOS locally on personal devices 
+       solely for private experimentation, hobbyist development, or personal 
+       enjoyment.
+2.2 No ownership rights are transferred to the User under this Agreement. 
+    The Licensor retains all title, interest, copyright, moral rights, and 
+    intellectual property rights in and to TopOS.
+
+--------------------------------------------------------------------------------
+SECTION 3: STRICT PROHIBITIONS AND RESTRICTIONS
+--------------------------------------------------------------------------------
+3.1 ABSOLUTE BAN ON PUBLIC USE: 
+    The User is strictly prohibited from deploying, hosting, publishing, or 
+    making TopOS accessible on any public-facing server, cloud platform, domain, 
+    subdomain, public network, or multi-user environment.
+3.2 ABSOLUTE BAN ON COMMERCIAL EXPLOITATION: 
+    The Software, or any portion thereof, may not be sold, licensed, sublicensed, 
+    rented, leased, monetized, or used for any commercial gain, business 
+    operation, or profit-generating activity whatsoever.
+3.3 ABSOLUTE BAN ON REDISTRIBUTION: 
+    The User shall not copy, distribute, transmit, upload, mirror, or otherwise 
+    make available the Software repository, source code, or derivatives thereof 
+    to any third party, whether via GitHub forks made public, file-sharing 
+    platforms, peer-to-peer networks, or physical media.
+3.4 MODIFICATION RESTRICTIONS: 
+    While the User may modify the source code of TopOS locally for purely 
+    private experimentation, any modified versions remain subject to this 
+    License and must never be published, shared, or distributed publicly.
+3.5 COPYRIGHT AND NOTICE INTEGRITY: 
+    The User shall not remove, alter, obscure, or bypass any copyright notices, 
+    author credits (deltamethod-id), license files, or trademark notices 
+    embedded within the Software code or documentation.
+
+--------------------------------------------------------------------------------
+SECTION 4: INTELLECTUAL PROPERTY RIGHTS
+--------------------------------------------------------------------------------
+4.1 All intellectual property rights, proprietary rights, and industrial property 
+    rights relating to TopOS, including its user interface design, operating 
+    system architecture, HTML5 runtime logic, scripts, icons, and branding, 
+    are the exclusive property of deltamethod-id.
+4.2 Unauthorized use, public distribution, or commercial appropriation of 
+    TopOS constitutes a direct violation of international copyright laws and 
+    the intellectual property laws of the Republic of Indonesia.
+
+--------------------------------------------------------------------------------
+SECTION 5: DISCLAIMER OF WARRANTIES
+--------------------------------------------------------------------------------
+5.1 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+    FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+5.2 THE LICENSOR DOES NOT WARRANT THAT TOPOS WILL OPERATE UNINTERRUPTED, BE 
+    ERROR-FREE, COMPATIBLE WITH ALL WEB BROWSERS SUPPORTING HTML5, OR MEET 
+    ANY SPECIFIC PERFORMANCE REQUIREMENTS OF THE USER.
+5.3 THE ENTIRE RISK AS TO THE QUALITY, PERFORMANCE, SECURITY, AND INTEGRITY 
+    OF THE HTML5-BASED ENVIRONMENT LIES SOLELY WITH THE USER.
+
+--------------------------------------------------------------------------------
+SECTION 6: LIMITATION OF LIABILITY
+--------------------------------------------------------------------------------
+6.1 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE 
+    LICENSOR (DELTAMETHOD-ID) BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+    SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+    LIMITED TO, LOSS OF DATA, SYSTEM FAILURE, BROWSER CRASHES, LOSS OF PROFITS, 
+    BUSINESS INTERRUPTION, OR COST OF PROCUREMENT OF SUBSTITUTE GOODS OR 
+    SERVICES) ARISING OUT OF OR IN CONNECTION WITH THE USE OR INABILITY TO USE 
+    TOPOS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+--------------------------------------------------------------------------------
+SECTION 7: TERMINATION
+--------------------------------------------------------------------------------
+7.1 This Agreement is effective until terminated.
+7.2 The license granted herein will terminate automatically and immediately 
+    without notice from the Licensor if the User breaches any term, condition, 
+    or restriction of this Agreement.
+7.3 Upon termination, the User must immediately cease all use of TopOS, destroy 
+    all local copies, archives, and modifications of the Software in their 
+    possession or control.
+7.4 Sections 3, 4, 5, 6, 8, and 9 shall survive any termination of this Agreement.
+
+--------------------------------------------------------------------------------
+SECTION 8: GOVERNING LAW AND JURISDICTION
+--------------------------------------------------------------------------------
+8.1 This Agreement shall be governed by, construed, and enforced in accordance 
+    with the laws of the Republic of Indonesia, without regard to its conflict 
+    of law principles.
+8.2 Any legal action, dispute, controversy, or claim arising out of or relating 
+    to this Agreement, including its validity, breach, or termination, shall be 
+    subject to the exclusive jurisdiction of the competent courts located 
+    within the Republic of Indonesia.
+
+--------------------------------------------------------------------------------
+SECTION 9: MISCELLANEOUS PROVISIONS
+--------------------------------------------------------------------------------
+9.1 SEVERABILITY: If any provision of this Agreement is held to be invalid, 
+    illegal, or unenforceable by a court of competent jurisdiction, such 
+    provision shall be modified to the minimum extent necessary to make it valid 
+    and enforceable, and the remaining provisions shall remain in full force 
+    and effect.
+9.2 ENTIRE AGREEMENT: This License Agreement constitutes the entire agreement 
+    between the Licensor (deltamethod-id) and the User concerning the TopOS 
+    project and supersedes all prior or contemporaneous understandings, 
+    communications, or agreements regarding the subject matter herein.
+9.3 AMENDMENTS: The Licensor reserves the right to modify, update, or revise 
+    the terms of this License Agreement at any time for future releases or 
+    updates of TopOS. Continued use of the Software after modifications 
+    constitutes acceptance of the updated terms.
+
+================================================================end of agreement=
