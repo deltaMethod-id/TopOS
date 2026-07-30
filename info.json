@@ -5,7 +5,7 @@
   "github-repository-url": "https://github.com/deltaMethod-id/TopOS/", 
   "websiteCertificate": "WR1",  
   "Hosting": "Vercel", 
-  "workflows": "Node.js, codeql", 
+  "workflows": "codeql", 
   "protocol": "https", 
   "main_url": "https://top-os.vercel.app"
 }
