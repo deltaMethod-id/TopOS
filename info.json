@@ -1,0 +1,9 @@
+{
+  "name": "TopOS", 
+  "license": "Proprietary", 
+  "author": "deltamethod-id", 
+  "github-repository-url": "https://github.com/deltaMethod-id/TopOS/", 
+  "websiteCertificate": "unavailable for now", 
+  "API": "None", 
+  "workflows": "Node.js, github code"
+}
