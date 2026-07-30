@@ -6,20 +6,20 @@
     <title>TopOS</title>
     <style>
         :root {
-            /* Material You / Android 16 Default Dark Theme */
-            --bg-base: #0f1115;
-            --surface: #1e2025;
-            --surface-variant: #2d3038;
-            --surface-glass: rgba(30, 32, 37, 0.65);
-            --primary: #a8c7fa;
-            --on-primary: #062e6f;
-            --primary-container: #0842a0;
-            --on-primary-container: #d3e3fd;
-            --secondary: #c2c7cf;
-            --text-main: #e2e2e9;
-            --text-muted: #8e9199;
-            --danger: #ffb4ab;
-            --success: #81c995;
+            /* Material You / Android 16 Red & Black Mysterious Dark Theme */
+            --bg-base: #060303;
+            --surface: #140808;
+            --surface-variant: #220d0d;
+            --surface-glass: rgba(20, 8, 8, 0.75);
+            --primary: #ff1744;
+            --on-primary: #ffffff;
+            --primary-container: #880e4f;
+            --on-primary-container: #ffdad6;
+            --secondary: #ff8a80;
+            --text-main: #f5e6e8;
+            --text-muted: #9e7a7c;
+            --danger: #ff5252;
+            --success: #69f0ae;
             --border-radius-sm: 12px;
             --border-radius-md: 24px;
             --border-radius-lg: 32px;
@@ -66,16 +66,16 @@
                 width: 375px;
                 height: 812px;
                 border-radius: 40px;
-                box-shadow: 0 0 0 10px #222, 0 0 30px rgba(0,0,0,0.8);
-                border: 2px solid #333;
+                box-shadow: 0 0 0 10px #120404, 0 0 40px rgba(255, 23, 68, 0.35);
+                border: 2px solid #2b0b0b;
             }
         }
 
-        /* Background / Wallpaper */
+        /* Background / Wallpaper - Mysterious Red & Black Gradient */
         .wallpaper {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+            background: linear-gradient(135deg, #020000 0%, #150202 40%, #300606 80%, #5c0808 100%);
             background-size: cover;
             background-position: center;
             z-index: 0;
@@ -83,7 +83,7 @@
         }
 
         .wallpaper.blurred {
-            filter: blur(20px) brightness(0.6);
+            filter: blur(20px) brightness(0.45);
         }
 
         /* System Bars */
@@ -95,7 +95,7 @@
             align-items: center;
             padding: 0 16px;
             color: #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
             pointer-events: none;
         }
 
@@ -131,7 +131,7 @@
         .nav-pill {
             width: 120px;
             height: 4px;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.7);
             border-radius: 4px;
             cursor: pointer;
             transition: width 0.2s, background 0.2s;
@@ -172,18 +172,22 @@
             flex-direction: column;
             align-items: center;
         }
-        .logo-svg {
-            width: 80px;
-            height: 80px;
-            fill: var(--primary);
+        .logo-img {
+            width: 88px;
+            height: 88px;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(255, 23, 68, 0.6);
             animation: pulse 2s infinite;
+            border: 2px solid rgba(255, 23, 68, 0.4);
         }
         .brand-text {
             margin-top: 16px;
             font-size: 24px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--text-main);
+            text-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
         }
         .progress-bar {
             margin-top: 40px;
@@ -198,6 +202,7 @@
             background: var(--primary);
             width: 0%;
             transition: width 0.1s linear;
+            box-shadow: 0 0 10px var(--primary);
         }
 
         /* Lock Screen */
@@ -210,26 +215,26 @@
             transition: backdrop-filter 0.3s;
         }
         #lock-screen.pin-mode {
-            backdrop-filter: blur(20px) brightness(0.5);
+            backdrop-filter: blur(25px) brightness(0.4);
         }
         .lock-clock {
             font-size: 72px;
             font-weight: 300;
             color: #fff;
             text-align: center;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 15px rgba(255,23,68,0.4);
             line-height: 1;
         }
         .lock-date {
             font-size: 18px;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.85);
             margin-top: 8px;
             font-weight: 400;
         }
         .unlock-hint {
             position: absolute;
             bottom: 60px;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.6);
             font-size: 14px;
             display: flex;
             flex-direction: column;
@@ -242,7 +247,7 @@
             bottom: 0;
             width: 100%;
             background: var(--surface-glass);
-            backdrop-filter: blur(30px);
+            backdrop-filter: blur(35px);
             border-top-left-radius: var(--border-radius-lg);
             border-top-right-radius: var(--border-radius-lg);
             padding: 32px 24px;
@@ -251,6 +256,7 @@
             align-items: center;
             transform: translateY(100%);
             transition: transform 0.4s var(--ease);
+            border-top: 1px solid rgba(255, 23, 68, 0.2);
         }
         #lock-screen.pin-mode .pin-pad {
             transform: translateY(0);
@@ -268,7 +274,9 @@
             transition: all 0.2s;
         }
         .pin-dot.filled {
-            background: var(--text-main);
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
         }
         .keypad {
             display: grid;
@@ -280,7 +288,7 @@
         .key {
             aspect-ratio: 1;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.06);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -288,9 +296,11 @@
             color: var(--text-main);
             cursor: pointer;
             transition: background 0.2s;
+            border: 1px solid rgba(255,255,255,0.04);
         }
         .key:active {
-            background: rgba(255,255,255,0.25);
+            background: rgba(255, 23, 68, 0.2);
+            border-color: var(--primary);
         }
 
         /* Home Screen */
@@ -314,13 +324,15 @@
             border-radius: var(--border-radius-md);
             padding: 16px;
             color: var(--text-main);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 23, 68, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
         .widget.weather {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background: linear-gradient(135deg, #4a0000 0%, #1f0404 100%);
         }
         .weather-temp {
             font-size: 32px;
@@ -355,10 +367,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             transition: transform 0.2s;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 23, 68, 0.1);
         }
         .app-icon:active {
             transform: scale(0.9);
@@ -372,7 +385,7 @@
         .app-label {
             color: #fff;
             font-size: 12px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9);
             font-weight: 500;
             text-align: center;
             white-space: nowrap;
@@ -398,19 +411,20 @@
         .dock {
             margin: 0 16px 16px 16px;
             background: var(--surface-glass);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             border-radius: var(--border-radius-lg);
             padding: 12px;
             display: flex;
             justify-content: space-around;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 23, 68, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         /* Notification & Quick Settings Panel */
         #qs-panel {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             z-index: 8000;
             opacity: 0;
             pointer-events: none;
@@ -434,7 +448,8 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            border-bottom: 1px solid rgba(255, 23, 68, 0.3);
         }
         #qs-panel.open .qs-content {
             transform: translateY(0);
@@ -454,10 +469,12 @@
             gap: 12px;
             cursor: pointer;
             transition: background 0.2s;
+            border: 1px solid rgba(255,255,255,0.04);
         }
         .qs-tile.active {
             background: var(--primary);
             color: var(--on-primary);
+            box-shadow: 0 0 15px rgba(255, 23, 68, 0.4);
         }
         .qs-tile svg {
             width: 24px; height: 24px;
@@ -475,6 +492,7 @@
             background: var(--surface-variant);
             padding: 12px 16px;
             border-radius: var(--border-radius-md);
+            border: 1px solid rgba(255,255,255,0.04);
         }
         .slider-container svg {
             width: 20px; height: 20px; fill: var(--text-main);
@@ -483,7 +501,7 @@
             flex: 1;
             -webkit-appearance: none;
             height: 6px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             border-radius: 3px;
             outline: none;
         }
@@ -493,6 +511,7 @@
             border-radius: 50%;
             background: var(--primary);
             cursor: pointer;
+            box-shadow: 0 0 8px var(--primary);
         }
 
         .notifications-list {
@@ -510,15 +529,17 @@
             gap: 12px;
             align-items: flex-start;
             position: relative;
+            border: 1px solid rgba(255, 23, 68, 0.1);
         }
         .noti-icon {
             width: 32px; height: 32px;
             border-radius: 50%;
             background: var(--primary);
             display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
         }
         .noti-icon svg { width: 16px; height: 16px; fill: var(--on-primary); }
-        .noti-content h4 { font-size: 14px; margin-bottom: 4px; }
+        .noti-content h4 { font-size: 14px; margin-bottom: 4px; color: var(--text-main); }
         .noti-content p { font-size: 12px; color: var(--text-muted); }
         .clear-all-btn {
             align-self: flex-end;
@@ -559,7 +580,7 @@
             padding-left: 8px;
             padding-right: 16px;
             background: var(--surface);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 23, 68, 0.2);
         }
         .back-btn {
             width: 40px; height: 40px;
@@ -573,7 +594,7 @@
             width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-left: 4px;
         }
         .app-header-icon svg { width: 16px; height: 16px; fill: #fff; }
-        .app-title { font-size: 18px; font-weight: 500; margin-left: 8px; flex: 1; }
+        .app-title { font-size: 18px; font-weight: 500; margin-left: 8px; flex: 1; color: var(--text-main); }
         .app-content {
             flex: 1;
             overflow-y: auto;
@@ -584,8 +605,8 @@
         /* Recent Apps */
         #recent-apps {
             z-index: 7000;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(5,2,2,0.85);
+            backdrop-filter: blur(15px);
             display: flex;
             align-items: center;
             overflow-x: auto;
@@ -603,7 +624,8 @@
             flex-direction: column;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255, 23, 68, 0.2);
             transition: transform 0.3s;
         }
         .recent-card-header {
@@ -611,7 +633,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
         }
         .recent-card-header svg { width: 20px; height: 20px; fill: var(--text-main); }
         .recent-card-title { font-size: 14px; font-weight: 500; }
@@ -623,7 +645,6 @@
             font-size: 12px; color: rgba(255,255,255,0.5);
         }
 
-        /* App Specific Styles */
         /* Calculator */
         .calc-grid {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 24px; height: 100%;
@@ -633,27 +654,27 @@
             align-items: flex-end; justify-content: flex-end; padding: 16px;
         }
         .calc-expr { font-size: 24px; color: var(--text-muted); min-height: 30px; }
-        .calc-res { font-size: 56px; font-weight: 300; }
+        .calc-res { font-size: 56px; font-weight: 300; color: var(--text-main); }
         .calc-btn {
-            background: var(--surface-variant); border-radius: 50%; border: none; color: var(--text-main);
+            background: var(--surface-variant); border-radius: 50%; border: 1px solid rgba(255,255,255,0.04); color: var(--text-main);
             font-size: 24px; cursor: pointer; transition: background 0.2s; aspect-ratio: 1;
         }
-        .calc-btn:active { background: rgba(255,255,255,0.2); }
-        .calc-btn.op { color: var(--primary); background: rgba(168, 199, 250, 0.1); }
-        .calc-btn.eq { background: var(--primary); color: var(--on-primary); }
+        .calc-btn:active { background: rgba(255,23,68,0.3); }
+        .calc-btn.op { color: var(--primary); background: rgba(255, 23, 68, 0.08); }
+        .calc-btn.eq { background: var(--primary); color: var(--on-primary); box-shadow: 0 0 15px rgba(255,23,68,0.5); }
 
         /* Notes */
         .notes-list { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
         .note-item {
             background: var(--surface-variant); padding: 16px; border-radius: var(--border-radius-sm);
-            cursor: pointer;
+            cursor: pointer; border: 1px solid rgba(255, 23, 68, 0.1);
         }
-        .note-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .note-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--text-main); }
         .note-preview { font-size: 14px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .fab {
             position: absolute; bottom: 24px; right: 24px; width: 56px; height: 56px;
             background: var(--primary); color: var(--on-primary); border-radius: 16px;
-            display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,23,68,0.6);
             border: none;
         }
         .note-editor {
@@ -675,31 +696,32 @@
         .settings-item {
             display: flex; align-items: center; padding: 16px 24px; gap: 16px; cursor: pointer;
         }
-        .settings-item:active { background: rgba(255,255,255,0.05); }
+        .settings-item:active { background: rgba(255,255,255,0.03); }
         .settings-icon {
             width: 40px; height: 40px; border-radius: 50%; background: var(--surface-variant);
             display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(255, 23, 68, 0.1);
         }
         .settings-icon svg { width: 20px; height: 20px; fill: var(--primary); }
         .settings-text { flex: 1; }
-        .settings-title { font-size: 16px; }
+        .settings-title { font-size: 16px; color: var(--text-main); }
         .settings-desc { font-size: 12px; color: var(--text-muted); }
         .toggle-switch {
-            width: 40px; height: 24px; background: rgba(255,255,255,0.2); border-radius: 12px; position: relative; transition: 0.3s;
+            width: 40px; height: 24px; background: rgba(255,255,255,0.15); border-radius: 12px; position: relative; transition: 0.3s;
         }
         .toggle-switch::after {
             content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px;
             background: #fff; border-radius: 50%; transition: 0.3s;
         }
-        .toggle-switch.on { background: var(--primary); }
+        .toggle-switch.on { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
         .toggle-switch.on::after { left: 18px; }
 
         /* Browser */
         .browser-bar {
-            display: flex; align-items: center; padding: 8px 16px; gap: 12px; background: var(--surface); border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; padding: 8px 16px; gap: 12px; background: var(--surface); border-bottom: 1px solid rgba(255, 23, 68, 0.2);
         }
         .browser-url {
-            flex: 1; background: var(--surface-variant); border: none; color: var(--text-main); padding: 10px 16px;
+            flex: 1; background: var(--surface-variant); border: 1px solid rgba(255,255,255,0.05); color: var(--text-main); padding: 10px 16px;
             border-radius: 20px; outline: none; font-size: 14px;
         }
         .browser-frame { width: 100%; height: calc(100% - 54px); border: none; background: #fff; }
@@ -707,36 +729,36 @@
         /* File Manager */
         .file-list { padding: 16px; }
         .file-item {
-            display: flex; align-items: center; gap: 16px; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; gap: 16px; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.04);
         }
         .file-icon svg { width: 32px; height: 32px; fill: var(--secondary); }
         .file-icon.folder svg { fill: var(--primary); }
 
-        /* Terminal */
-        .terminal-container { padding: 16px; font-family: monospace; font-size: 14px; height: 100%; overflow-y: auto; background: #000; color: #0f0; }
-        .term-output { margin-bottom: 8px; white-space: pre-wrap; }
+        /* Terminal - Mysterious Crimson Code Vibe */
+        .terminal-container { padding: 16px; font-family: monospace; font-size: 14px; height: 100%; overflow-y: auto; background: #030101; color: #ff3344; }
+        .term-output { margin-bottom: 8px; white-space: pre-wrap; text-shadow: 0 0 5px rgba(255, 51, 68, 0.3); }
         .term-input-line { display: flex; align-items: center; }
-        .term-prompt { color: var(--primary); margin-right: 8px; }
-        .term-input { background: transparent; border: none; color: #0f0; font-family: monospace; font-size: 14px; outline: none; flex: 1; }
+        .term-prompt { color: #fff; margin-right: 8px; font-weight: bold; }
+        .term-input { background: transparent; border: none; color: #ff5252; font-family: monospace; font-size: 14px; outline: none; flex: 1; }
 
         /* Dialogs / Toasts */
         #toast-container {
             position: absolute; bottom: 80px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10000; pointer-events: none;
         }
         .toast {
-            background: rgba(200,200,200,0.9); color: #000; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500;
+            background: rgba(30, 10, 10, 0.95); color: var(--text-main); border: 1px solid var(--primary); box-shadow: 0 0 15px rgba(255,23,68,0.5); padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 500;
             animation: fadeInOut 3s forwards;
         }
 
         /* Animations */
-        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } 100% { transform: scale(1); opacity: 1; } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        @keyframes appOpen { 0% { opacity: 0; transform: scale(0.8) translateY(50px); border-radius: 40px; } 100% { opacity: 1; transform: scale(1) translateY(0); border-radius: 0; } }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.85; filter: drop-shadow(0 0 15px var(--primary)); } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes appOpen { 0% { opacity: 0; transform: scale(0.85) translateY(40px); border-radius: 40px; } 100% { opacity: 1; transform: scale(1) translateY(0); border-radius: 0; } }
         @keyframes appClose { 0% { opacity: 1; transform: scale(1) translateY(0); } 100% { opacity: 0; transform: scale(0.9) translateY(20px); } }
         @keyframes fadeInOut { 0% { opacity: 0; transform: translateY(20px); } 10% { opacity: 1; transform: translateY(0); } 90% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-20px); } }
         
         .ripple {
-            position: absolute; border-radius: 50%; background: rgba(255,255,255,0.3); transform: scale(0); animation: ripple 0.6s linear; pointer-events: none;
+            position: absolute; border-radius: 50%; background: rgba(255, 23, 68, 0.35); transform: scale(0); animation: ripple 0.6s linear; pointer-events: none;
         }
         @keyframes ripple { to { transform: scale(4); opacity: 0; } }
 
@@ -757,13 +779,10 @@
         </div>
     </div>
 
-    <!-- Boot Screen -->
+    <!-- Boot Screen with TopOS.jpg -->
     <div class="screen active" id="boot-screen">
         <div class="logo-container">
-            <svg class="logo-svg" viewBox="0 0 24 24">
-                <path d="M12 2L2 22h20L12 2zm0 3.8l7.1 14.2H4.9L12 5.8z" />
-                <circle cx="12" cy="16" r="2" />
-            </svg>
+            <img src="TopOS.jpg" alt="TopOS" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23ff1744\'><path d=\'M12 2L2 22h20L12 2zm0 3.8l7.1 14.2H4.9L12 5.8z\'/></svg>';">
             <div class="brand-text">TopOS</div>
             <div class="progress-bar">
                 <div class="progress-fill" id="boot-progress"></div>
@@ -798,20 +817,20 @@
     <!-- Home Screen -->
     <div class="screen" id="home-screen">
         <div class="widgets-area">
-            <div class="widget weather" id="widget-weather" style="background: linear-gradient(135deg, #4A90E2, #50E3C2);">
+            <div class="widget weather" id="widget-weather">
                 <div>
                     <h3 style="font-weight: 500; font-size: 16px;">Cileungsi</h3>
-                    <p style="font-size: 14px; opacity: 0.9;">Partly Cloudy</p>
+                    <p style="font-size: 14px; opacity: 0.85;">Mysterious Fog</p>
                 </div>
-                <div class="weather-temp">28°C</div>
+                <div class="weather-temp">24°C</div>
             </div>
             <div class="widget" style="width: 100%; display: flex; align-items: center; gap: 16px;">
-                <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                <div style="width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px var(--primary);">
                     <svg width="20" height="20" fill="var(--on-primary)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
                 <div>
-                    <div style="font-size: 14px; font-weight: bold;">Not Playing</div>
-                    <div style="font-size: 12px; color: var(--text-muted);">TopOS Music</div>
+                    <div style="font-size: 14px; font-weight: bold;">Shadow Realm</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">TopOS Audio</div>
                 </div>
             </div>
         </div>
@@ -834,7 +853,7 @@
             <div class="qs-grid">
                 <div class="qs-tile active" id="qs-wifi">
                     <svg viewBox="0 0 24 24"><path d="M12 3C7.9 3 4.2 4.6 1.4 7.2L12 21l10.6-13.8C19.8 4.6 16.1 3 12 3z"/></svg>
-                    <span>Wi-Fi</span>
+                    <span>Secure Net</span>
                 </div>
                 <div class="qs-tile active" id="qs-bt">
                     <svg viewBox="0 0 24 24"><path d="M17.7 7.7L12 2v6l-4.3-4.3-1.4 1.4L10.6 9.4 6.3 13.7l1.4 1.4L12 10.8v6l5.7-5.7L13.4 9.4l4.3-1.7zM14 6.8l1.9 1.9L14 10.6V6.8zm0 10.4v-3.8l1.9 1.9L14 17.2z"/></svg>
@@ -842,11 +861,11 @@
                 </div>
                 <div class="qs-tile" id="qs-flash">
                     <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
-                    <span>Flashlight</span>
+                    <span>Torch</span>
                 </div>
                 <div class="qs-tile active" id="qs-dark">
                     <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
-                    <span>Dark Theme</span>
+                    <span>Eclipse Mode</span>
                 </div>
             </div>
             <div class="qs-sliders">
@@ -945,7 +964,7 @@ const Storage = {
 // Default State
 if(!Storage.get('setup_done', false)) {
     Storage.set('setup_done', true);
-    Storage.set('notes', [{id:1, title: 'Welcome', body: 'Welcome to TopOS 1.0!'}]);
+    Storage.set('notes', [{id:1, title: 'TopOS Shadow Log', body: 'System compromised. Welcome to the Crimson Realm.'}]);
     Storage.set('settings', { 
         theme: 'dark', 
         pin: '0000', 
@@ -1034,23 +1053,23 @@ class AppManager {
 const getAppsList = () => {
     let list = [
         {
-            id: 'phone', name: 'Phone', icon: Icons.phone, color: '#4caf50', inDock: true, canUninstall: false,
+            id: 'phone', name: 'Phone', icon: Icons.phone, color: '#b71c1c', inDock: true, canUninstall: false,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `<div style="display:flex;flex-direction:column;height:100%;align-items:center;justify-content:center;color:var(--text-muted);">
                     <div style="font-size:60px;margin-bottom:20px;">📞</div>
-                    <h2>Phone Simulation</h2>
-                    <p>Calling not available in web emulator.</p>
+                    <h2>Secure Line</h2>
+                    <p>Encrypted frequencies only.</p>
                 </div>`;
             }
         },
         {
-            id: 'messages', name: 'Messages', icon: Icons.messages, color: '#2196f3', inDock: true, canUninstall: false,
+            id: 'messages', name: 'Messages', icon: Icons.messages, color: '#880e4f', inDock: true, canUninstall: false,
             onOpen: (app) => {
-                app.contentEl.innerHTML = `<div style="padding:16px;text-align:center;color:var(--text-muted);"><br><br>No messages yet.</div>`;
+                app.contentEl.innerHTML = `<div style="padding:16px;text-align:center;color:var(--text-muted);"><br><br>No encrypted transmissions.</div>`;
             }
         },
         {
-            id: 'browser', name: 'Browser', icon: Icons.browser, color: '#ff9800', inDock: true, canUninstall: false,
+            id: 'browser', name: 'Browser', icon: Icons.browser, color: '#d50000', inDock: true, canUninstall: false,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `
                     <div class="browser-bar">
@@ -1065,19 +1084,19 @@ const getAppsList = () => {
             }
         },
         {
-            id: 'camera', name: 'Camera', icon: Icons.camera, color: '#9c27b0', inDock: true, canUninstall: false,
+            id: 'camera', name: 'Camera', icon: Icons.camera, color: '#b71c1c', inDock: true, canUninstall: false,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `<video id="cam-vid" style="width:100%;height:100%;object-fit:cover;background:#000;" autoplay playsinline></video>
                 <div style="position:absolute;bottom:40px;width:100%;display:flex;justify-content:center;">
-                    <div style="width:70px;height:70px;border-radius:50%;border:4px solid #fff;background:rgba(255,255,255,0.3);cursor:pointer;" onclick="Toast.show('Photo saved to Gallery')"></div>
+                    <div style="width:70px;height:70px;border-radius:50%;border:4px solid var(--primary);background:rgba(255,23,68,0.2);cursor:pointer;" onclick="Toast.show('Captured to Shadow Vault')"></div>
                 </div>`;
                 navigator.mediaDevices.getUserMedia({video: {facingMode: 'environment'}})
                     .then(stream => { app.contentEl.querySelector('video').srcObject = stream; })
-                    .catch(err => { Toast.show("Camera access denied"); app.contentEl.innerHTML = "<div style='padding:20px'>Camera not available</div>"; });
+                    .catch(err => { Toast.show("Camera access denied"); app.contentEl.innerHTML = "<div style='padding:20px'>Camera lens blocked</div>"; });
             }
         },
         {
-            id: 'store', name: 'Top Store', icon: Icons.store, color: '#00bcd4', canUninstall: false,
+            id: 'store', name: 'Dark Store', icon: Icons.store, color: '#c62828', canUninstall: false,
             onOpen: (app) => {
                 const renderStore = () => {
                     let krInstalled = sysSettings.kingRootInstalled;
@@ -1087,16 +1106,16 @@ const getAppsList = () => {
 
                     app.contentEl.innerHTML = `
                     <div style="padding:20px; display:flex; flex-direction:column; gap:20px;">
-                        <h3>Top Store Apps</h3>
+                        <h3>Crimson Package Manager</h3>
                         
                         <!-- Developer Account Status Banner -->
-                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px;">
-                            <div style="width:48px;height:48px;background:#673ab7;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px; border:1px solid rgba(255,23,68,0.2);">
+                            <div style="width:48px;height:48px;background:#5c0808;border-radius:12px;display:flex;align-items:center;justify-content:center;">
                                 <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
                             </div>
                             <div style="flex:1;">
-                                <h4 style="font-size:16px;">Developer Program</h4>
-                                <p style="font-size:12px;color:var(--text-muted);">${isDev ? 'Account Active (Can Upload Apps)' : 'Become a certified TopOS Developer'}</p>
+                                <h4 style="font-size:16px;">Shadow Dev Guild</h4>
+                                <p style="font-size:12px;color:var(--text-muted);">${isDev ? 'Guild Member (Can Deploy Apps)' : 'Request developer clearance'}</p>
                             </div>
                             <button id="dev-acc-btn" style="background:${isDev ? 'var(--surface)' : 'var(--primary)'}; color:${isDev ? 'var(--text-muted)' : 'var(--on-primary)'}; border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer;">
                                 ${isDev ? 'Active' : 'Join'}
@@ -1104,21 +1123,21 @@ const getAppsList = () => {
                         </div>
 
                         ${isDev ? `
-                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; flex-direction:column; gap:12px;">
-                            <h4 style="font-size:16px;">Upload Custom App</h4>
-                            <input type="text" id="dev-app-name" placeholder="App Name" style="background:var(--surface);border:none;padding:10px;color:#fff;border-radius:8px;outline:none;" />
-                            <input type="text" id="dev-app-color" placeholder="Color Hex (e.g. #e91e63)" style="background:var(--surface);border:none;padding:10px;color:#fff;border-radius:8px;outline:none;" />
-                            <button id="dev-upload-btn" style="background:var(--primary);color:var(--on-primary);border:none;padding:10px;border-radius:8px;font-weight:600;cursor:pointer;">Publish App</button>
+                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; flex-direction:column; gap:12px; border:1px solid rgba(255,23,68,0.2);">
+                            <h4 style="font-size:16px;">Deploy Custom Module</h4>
+                            <input type="text" id="dev-app-name" placeholder="Module Name" style="background:var(--surface);border:1px solid rgba(255,23,68,0.3);padding:10px;color:#fff;border-radius:8px;outline:none;" />
+                            <input type="text" id="dev-app-color" placeholder="Color Hex (e.g. #ff1744)" style="background:var(--surface);border:1px solid rgba(255,23,68,0.3);padding:10px;color:#fff;border-radius:8px;outline:none;" />
+                            <button id="dev-upload-btn" style="background:var(--primary);color:var(--on-primary);border:none;padding:10px;border-radius:8px;font-weight:600;cursor:pointer;box-shadow:0 0 10px rgba(255,23,68,0.4);">Inject App</button>
                         </div>` : ''}
 
                         <!-- TopFA Banner -->
-                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px;">
-                            <div style="width:48px;height:48px;background:#4caf50;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px; border:1px solid rgba(255,23,68,0.2);">
+                            <div style="width:48px;height:48px;background:#880e4f;border-radius:12px;display:flex;align-items:center;justify-content:center;">
                                 <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">${Icons.shield}</svg>
                             </div>
                             <div style="flex:1;">
-                                <h4 style="font-size:16px;">Top Factor Auth (TopFA)</h4>
-                                <p style="font-size:12px;color:var(--text-muted);">Secure app installs with 2FA verification</p>
+                                <h4 style="font-size:16px;">TopFA Sentinel</h4>
+                                <p style="font-size:12px;color:var(--text-muted);">Double verification barrier</p>
                             </div>
                             <button id="tfa-btn" style="background:${tfaEnabled ? 'var(--surface)' : 'var(--primary)'}; color:${tfaEnabled ? 'var(--text-muted)' : 'var(--on-primary)'}; border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer;">
                                 ${tfaEnabled ? 'Enabled' : 'Enable'}
@@ -1126,13 +1145,13 @@ const getAppsList = () => {
                         </div>
 
                         <!-- King Root App -->
-                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px;">
-                            <div style="width:48px;height:48px;background:#ff5722;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px; border:1px solid rgba(255,23,68,0.2);">
+                            <div style="width:48px;height:48px;background:#d50000;border-radius:12px;display:flex;align-items:center;justify-content:center;">
                                 <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.8l7.1 14.2H4.9L12 5.8z"/></svg>
                             </div>
                             <div style="flex:1;">
-                                <h4 style="font-size:16px;">King Root</h4>
-                                <p style="font-size:12px;color:var(--text-muted);">Gain superuser privileges on TopOS</p>
+                                <h4 style="font-size:16px;">King Root Exploit</h4>
+                                <p style="font-size:12px;color:var(--text-muted);">Root privileges for TopOS</p>
                             </div>
                             <button id="install-kr-btn" style="background:${krInstalled ? 'var(--surface)' : 'var(--primary)'}; color:${krInstalled ? 'var(--text-muted)' : 'var(--on-primary)'}; border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer;">
                                 ${krInstalled ? 'Installed' : 'Install'}
@@ -1140,13 +1159,13 @@ const getAppsList = () => {
                         </div>
 
                         <!-- YouTube URL Player App -->
-                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px;">
-                            <div style="width:48px;height:48px;background:#f44336;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+                        <div style="background:var(--surface-variant); padding:16px; border-radius:var(--border-radius-md); display:flex; align-items:center; gap:16px; border:1px solid rgba(255,23,68,0.2);">
+                            <div style="width:48px;height:48px;background:#b71c1c;border-radius:12px;display:flex;align-items:center;justify-content:center;">
                                 <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">${Icons.youtube}</svg>
                             </div>
                             <div style="flex:1;">
-                                <h4 style="font-size:16px;">YouTube Player</h4>
-                                <p style="font-size:12px;color:var(--text-muted);">Stream YouTube videos via URL</p>
+                                <h4 style="font-size:16px;">Shadow Streamer</h4>
+                                <p style="font-size:12px;color:var(--text-muted);">Play YouTube streams via URL</p>
                             </div>
                             <button id="install-yt-btn" style="background:${ytInstalled ? 'var(--surface)' : 'var(--primary)'}; color:${ytInstalled ? 'var(--text-muted)' : 'var(--on-primary)'}; border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer;">
                                 ${ytInstalled ? 'Installed' : 'Install'}
@@ -1157,11 +1176,11 @@ const getAppsList = () => {
                     const verify2FA = (cb) => {
                         if(!sysSettings.topFAEnabled) { cb(); return; }
                         let code = Math.floor(1000 + Math.random() * 9000);
-                        let input = prompt(`[TopFA Security] Enter verification code: ${code}`);
+                        let input = prompt(`[TopFA Security] Enter clearance code: ${code}`);
                         if(input == code) {
                             cb();
                         } else {
-                            Toast.show("TopFA verification failed!");
+                            Toast.show("Clearance verification failed!");
                         }
                     };
 
@@ -1169,7 +1188,7 @@ const getAppsList = () => {
                         verify2FA(() => {
                             sysSettings.isDevAccount = true;
                             Storage.set('settings', sysSettings);
-                            Toast.show("Developer Account activated!");
+                            Toast.show("Shadow Dev Guild unlocked!");
                             renderStore();
                             initUI();
                         });
@@ -1178,12 +1197,12 @@ const getAppsList = () => {
                     if(sysSettings.isDevAccount) {
                         app.contentEl.querySelector('#dev-upload-btn').onclick = () => {
                             let name = app.contentEl.querySelector('#dev-app-name').value.trim();
-                            let color = app.contentEl.querySelector('#dev-app-color').value.trim() || '#3f51b5';
-                            if(!name) { Toast.show("Enter app name"); return; }
+                            let color = app.contentEl.querySelector('#dev-app-color').value.trim() || '#ff1744';
+                            if(!name) { Toast.show("Enter module name"); return; }
                             verify2FA(() => {
                                 sysSettings.customApps.push({ id: 'custom_'+Date.now(), name, color, icon: Icons.browser });
                                 Storage.set('settings', sysSettings);
-                                Toast.show(`App '${name}' uploaded successfully!`);
+                                Toast.show(`Module '${name}' injected successfully!`);
                                 initUI();
                                 renderStore();
                             });
@@ -1193,7 +1212,7 @@ const getAppsList = () => {
                     app.contentEl.querySelector('#tfa-btn').onclick = () => {
                         sysSettings.topFAEnabled = !sysSettings.topFAEnabled;
                         Storage.set('settings', sysSettings);
-                        Toast.show(`TopFA ${sysSettings.topFAEnabled ? 'Enabled' : 'Disabled'}`);
+                        Toast.show(`TopFA Sentinel ${sysSettings.topFAEnabled ? 'Enabled' : 'Disabled'}`);
                         renderStore();
                     };
 
@@ -1202,7 +1221,7 @@ const getAppsList = () => {
                             verify2FA(() => {
                                 sysSettings.kingRootInstalled = true;
                                 Storage.set('settings', sysSettings);
-                                Toast.show("King Root installed successfully!");
+                                Toast.show("King Root installed!");
                                 renderStore();
                                 initUI();
                             });
@@ -1214,7 +1233,7 @@ const getAppsList = () => {
                             verify2FA(() => {
                                 sysSettings.youtubeInstalled = true;
                                 Storage.set('settings', sysSettings);
-                                Toast.show("YouTube Player installed successfully!");
+                                Toast.show("Shadow Streamer installed!");
                                 renderStore();
                                 initUI();
                             });
@@ -1225,7 +1244,7 @@ const getAppsList = () => {
             }
         },
         {
-            id: 'calculator', name: 'Calculator', icon: Icons.calculator, color: '#f44336', canUninstall: false,
+            id: 'calculator', name: 'Calculator', icon: Icons.calculator, color: '#d50000', canUninstall: false,
             onOpen: (app) => {
                 let eq = '', res = '0';
                 const render = () => {
@@ -1278,7 +1297,7 @@ const getAppsList = () => {
             }
         },
         {
-            id: 'notes', name: 'Notes', icon: Icons.notes, color: '#ffb300', canUninstall: false,
+            id: 'notes', name: 'Shadow Notes', icon: Icons.notes, color: '#ff6d00', canUninstall: false,
             onOpen: (app) => {
                 let notes = Storage.get('notes', []);
                 const renderList = () => {
@@ -1293,12 +1312,12 @@ const getAppsList = () => {
                     <div class="note-editor" id="note-editor">
                         <div class="app-header">
                             <button class="back-btn" id="ne-back"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
-                            <div class="app-header-icon" style="background:#ffb300"><svg viewBox="0 0 24 24">${Icons.notes}</svg></div>
-                            <div class="app-title">Edit Note</div>
+                            <div class="app-header-icon" style="background:#ff6d00"><svg viewBox="0 0 24 24">${Icons.notes}</svg></div>
+                            <div class="app-title">Encrypted Note</div>
                             <button class="back-btn" id="ne-del"><svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg></button>
                         </div>
                         <input type="text" class="note-input-title" id="ni-title" placeholder="Title">
-                        <textarea class="note-input-body" id="ni-body" placeholder="Start typing..."></textarea>
+                        <textarea class="note-input-body" id="ni-body" placeholder="Write into the shadows..."></textarea>
                     </div>`;
                     app.contentEl.innerHTML = html;
                     
@@ -1338,38 +1357,38 @@ const getAppsList = () => {
                         Storage.set('notes', notes);
                         ed.classList.remove('active');
                         setTimeout(renderList, 300);
-                        Toast.show('Note deleted');
+                        Toast.show('Note shredded');
                     };
                 };
                 renderList();
             }
         },
         {
-            id: 'settings', name: 'Settings', icon: Icons.settings, color: '#607d8b', canUninstall: false,
+            id: 'settings', name: 'Settings', icon: Icons.settings, color: '#424242', canUninstall: false,
             onOpen: (app) => {
                 const render = () => {
                     app.contentEl.innerHTML = `
                     <div class="settings-list">
-                        <div class="settings-item" onclick="Toast.show('Dark Theme active')">
+                        <div class="settings-item" onclick="Toast.show('Crimson Eclipse Theme active')">
                             <div class="settings-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg></div>
                             <div class="settings-text">
-                                <div class="settings-title">Display</div>
-                                <div class="settings-desc">Dark theme enabled</div>
+                                <div class="settings-title">Display & Vibe</div>
+                                <div class="settings-desc">Red & Black Mysterious Theme</div>
                             </div>
                         </div>
                         <div class="settings-item" id="set-pin">
                             <div class="settings-icon"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg></div>
                             <div class="settings-text">
-                                <div class="settings-title">Security & Lock</div>
+                                <div class="settings-title">Lock Security</div>
                                 <div class="settings-desc">PIN: ${sysSettings.usePin ? 'Enabled' : 'Disabled'}</div>
                             </div>
                             <div class="toggle-switch ${sysSettings.usePin ? 'on' : ''}"></div>
                         </div>
-                        <div class="settings-item" onclick="Toast.show('TopOS Version 1.0 (HTML5)')">
+                        <div class="settings-item" onclick="Toast.show('TopOS v1.0 [Crimson Edition]')">
                             <div class="settings-icon"><svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg></div>
                             <div class="settings-text">
-                                <div class="settings-title">About Device</div>
-                                <div class="settings-desc">Root Status: ${sysSettings.isRooted ? 'Rooted (Superuser)' : 'Not Rooted'}</div>
+                                <div class="settings-title">System Status</div>
+                                <div class="settings-desc">Root: ${sysSettings.isRooted ? 'Active (Superuser)' : 'Locked'}</div>
                             </div>
                         </div>
                     </div>`;
@@ -1383,34 +1402,34 @@ const getAppsList = () => {
             }
         },
         {
-            id: 'files', name: 'Files', icon: Icons.files, color: '#3f51b5', canUninstall: false,
+            id: 'files', name: 'Vault', icon: Icons.files, color: '#8e0000', canUninstall: false,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `
                 <div class="file-list">
-                    <div class="file-item"><div class="file-icon folder"><svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div><div>Downloads</div></div>
-                    <div class="file-item"><div class="file-icon folder"><svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div><div>Pictures</div></div>
-                    ${sysSettings.isRooted ? '<div class="file-item"><div class="file-icon folder"><svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2z"/></svg></div><div>Root Directory (/sbin)</div></div>' : ''}
+                    <div class="file-item"><div class="file-icon folder"><svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div><div>Encrypted Downloads</div></div>
+                    <div class="file-item"><div class="file-icon folder"><svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></div><div>Shadow Gallery</div></div>
+                    ${sysSettings.isRooted ? '<div class="file-item"><div class="file-icon folder"><svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2z"/></svg></div><div>Root Partition (/sbin/su)</div></div>' : ''}
                 </div>`;
             }
         },
         {
-            id: 'terminal', name: 'Terminal', icon: Icons.terminal, color: '#000000', canUninstall: false,
+            id: 'terminal', name: 'Terminal', icon: Icons.terminal, color: '#030101', canUninstall: false,
             onOpen: (app) => {
                 const cmds = {
                     help: 'Available commands: help, clear, date, time, version, echo, ls, pwd, whoami, reboot, shutdown',
                     clear: () => { app.contentEl.querySelector('.term-output').innerHTML = ''; return ''; },
                     date: () => new Date().toLocaleDateString(),
                     time: () => new Date().toLocaleTimeString(),
-                    version: 'TopOS v1.0 HTML5 Engine',
-                    whoami: sysSettings.isRooted ? 'root' : 'user',
-                    pwd: sysSettings.isRooted ? '/root' : '/home/user',
-                    ls: sysSettings.isRooted ? 'app_data  configs  sys  su_binary  root.cfg' : 'app_data  configs  sys',
-                    reboot: () => { location.reload(); return 'Rebooting...'; },
-                    shutdown: () => { $('device').innerHTML = '<div style="background:#000;color:#fff;height:100%;display:flex;align-items:center;justify-content:center;">System Halted.</div>'; return ''; }
+                    version: 'TopOS v1.0 [Crimson Mysterious Engine]',
+                    whoami: sysSettings.isRooted ? 'root@topos' : 'shadow@topos',
+                    pwd: sysSettings.isRooted ? '/root' : '/home/shadow',
+                    ls: sysSettings.isRooted ? 'app_data  configs  sys  su_binary  shadow.key' : 'app_data  configs  sys',
+                    reboot: () => { location.reload(); return 'Rebooting matrix...'; },
+                    shutdown: () => { $('device').innerHTML = '<div style="background:#000;color:#ff1744;height:100%;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:18px;text-shadow:0 0 10px rgba(255,23,68,0.5);">System Offline.</div>'; return ''; }
                 };
                 
                 app.contentEl.innerHTML = `<div class="terminal-container" onclick="document.getElementById('ti-${app.id}').focus()">
-                    <div class="term-output">TopOS Terminal v1.0\nType 'help' for commands.\n</div>
+                    <div class="term-output">TopOS Terminal v1.0 [Crimson Secure Shell]\nType 'help' for commands.\n</div>
                     <div class="term-input-line">
                         <span class="term-prompt">${sysSettings.isRooted ? '#' : '$'}</span>
                         <input type="text" class="term-input" id="ti-${app.id}" autocomplete="off" spellcheck="false">
@@ -1431,7 +1450,7 @@ const getAppsList = () => {
                                 res = typeof cmds[cmd] === 'function' ? cmds[cmd]() : cmds[cmd];
                                 if(cmd === 'echo') res = parts.slice(1).join(' ');
                             } else {
-                                res = `bash: ${cmd}: command not found`;
+                                res = `sh: command not found: ${cmd}`;
                             }
                         }
                         if(val !== 'clear') {
@@ -1445,11 +1464,11 @@ const getAppsList = () => {
             }
         },
         {
-            id: 'clock', name: 'Clock', icon: Icons.clock, color: '#e91e63', canUninstall: false,
+            id: 'clock', name: 'Clock', icon: Icons.clock, color: '#880e4f', canUninstall: false,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;padding:40px;">
-                    <div style="font-size:60px;font-weight:200;margin-bottom:20px;" id="app-clock-display">00:00</div>
-                    <div style="font-size:20px;color:var(--text-muted);">Current Time</div>
+                    <div style="font-size:60px;font-weight:200;margin-bottom:20px;color:var(--text-main);" id="app-clock-display">00:00</div>
+                    <div style="font-size:20px;color:var(--text-muted);">Shadow Time</div>
                 </div>`;
                 const iv = setInterval(() => {
                     const el = app.contentEl.querySelector('#app-clock-display');
@@ -1462,23 +1481,23 @@ const getAppsList = () => {
 
     if(sysSettings.kingRootInstalled) {
         list.push({
-            id: 'kingroot', name: 'King Root', icon: Icons.root, color: '#ff5722', canUninstall: true,
+            id: 'kingroot', name: 'King Root', icon: Icons.root, color: '#d50000', canUninstall: true,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:24px;text-align:center;">
-                    <div style="font-size:64px;margin-bottom:16px;">👑</div>
-                    <h2>King Root Manager</h2>
-                    <p style="color:var(--text-muted);margin:12px 0 24px;">Status: ${sysSettings.isRooted ? 'Device is Rooted' : 'Root Access Available'}</p>
-                    <button id="do-root-btn" style="background:var(--primary);color:var(--on-primary);border:none;padding:12px 24px;border-radius:24px;font-weight:600;cursor:pointer;">
-                        ${sysSettings.isRooted ? 'Re-Apply Root Exploit' : 'Start Root Process'}
+                    <div style="font-size:64px;margin-bottom:16px;filter:drop-shadow(0 0 10px var(--primary));">👑</div>
+                    <h2>King Root Exploit</h2>
+                    <p style="color:var(--text-muted);margin:12px 0 24px;">Status: ${sysSettings.isRooted ? 'Root Access Granted' : 'Ready to Exploit'}</p>
+                    <button id="do-root-btn" style="background:var(--primary);color:var(--on-primary);border:none;padding:12px 24px;border-radius:24px;font-weight:600;cursor:pointer;box-shadow:0 0 15px rgba(255,23,68,0.5);">
+                        ${sysSettings.isRooted ? 'Re-Initialize Exploit' : 'Execute Root Exploit'}
                     </button>
                 </div>`;
                 
                 app.contentEl.querySelector('#do-root-btn').onclick = () => {
-                    Toast.show("Executing root exploit...");
+                    Toast.show("Injecting root binary...");
                     setTimeout(() => {
                         sysSettings.isRooted = true;
                         Storage.set('settings', sysSettings);
-                        Toast.show("Root granted! Rebooting device...");
+                        Toast.show("Root access attained! Rebooting...");
                         setTimeout(() => location.reload(), 1500);
                     }, 1500);
                 };
@@ -1488,11 +1507,11 @@ const getAppsList = () => {
 
     if(sysSettings.youtubeInstalled) {
         list.push({
-            id: 'youtube', name: 'YouTube', icon: Icons.youtube, color: '#f44336', canUninstall: true,
+            id: 'youtube', name: 'Streamer', icon: Icons.youtube, color: '#b71c1c', canUninstall: true,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `
                     <div class="browser-bar">
-                        <input type="text" class="browser-url" id="yt-url-${app.id}" value="https://www.youtube.com/embed/dQw4w9WgXcQ" placeholder="Enter YouTube Embed URL" />
+                        <input type="text" class="browser-url" id="yt-url-${app.id}" value="https://www.youtube.com/embed/dQw4w9WgXcQ" placeholder="YouTube Embed URL" />
                         <button class="calc-btn" style="width:36px;height:36px;font-size:12px;" onclick="document.getElementById('yt-frame-${app.id}').src = document.getElementById('yt-url-${app.id}').value">Load</button>
                     </div>
                     <iframe id="yt-frame-${app.id}" class="browser-frame" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
@@ -1506,28 +1525,28 @@ const getAppsList = () => {
         list.push({
             id: ca.id, name: ca.name, icon: ca.icon, color: ca.color, canUninstall: true,
             onOpen: (app) => {
-                app.contentEl.innerHTML = `<div style="padding:24px; text-align:center;"><br><h2>${ca.name}</h2><p style="color:var(--text-muted);">Custom User Uploaded App</p></div>`;
+                app.contentEl.innerHTML = `<div style="padding:24px; text-align:center;"><br><h2>${ca.name}</h2><p style="color:var(--text-muted);">Custom Injected Module</p></div>`;
             }
         });
     });
 
     if(sysSettings.isRooted) {
         list.push({
-            id: 'rootmenu', name: 'Root Menu', icon: Icons.root, color: '#4caf50', canUninstall: false,
+            id: 'rootmenu', name: 'Root Control', icon: Icons.root, color: '#880e4f', canUninstall: false,
             onOpen: (app) => {
                 app.contentEl.innerHTML = `<div style="padding:20px;display:flex;flex-direction:column;gap:16px;">
-                    <h3>Superuser Control Panel</h3>
-                    <div style="background:var(--surface-variant);padding:16px;border-radius:var(--border-radius-md);">
-                        <h4>Permissions Management</h4>
-                        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">All system apps granted UID 0 (root)</p>
+                    <h3>Superuser Shadow Panel</h3>
+                    <div style="background:var(--surface-variant);padding:16px;border-radius:var(--border-radius-md);border:1px solid rgba(255,23,68,0.2);">
+                        <h4>UID 0 Privileges</h4>
+                        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">All system calls operate with root authorization</p>
                     </div>
-                    <div style="background:var(--surface-variant);padding:16px;border-radius:var(--border-radius-md);cursor:pointer;" onclick="Toast.show('System partition remounted read-write')">
+                    <div style="background:var(--surface-variant);padding:16px;border-radius:var(--border-radius-md);cursor:pointer;border:1px solid rgba(255,23,68,0.2);" onclick="Toast.show('Partition mounted read-write safely')">
                         <h4>Remount /system RW</h4>
-                        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Click to modify system partitions</p>
+                        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Click to rewrite kernel configs</p>
                     </div>
-                    <div style="background:var(--surface-variant);padding:16px;border-radius:var(--border-radius-md);cursor:pointer;" onclick="localStorage.clear();location.reload();">
-                        <h4>Factory Unroot / Reset OS</h4>
-                        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Wipe root configurations and restart</p>
+                    <div style="background:var(--surface-variant);padding:16px;border-radius:var(--border-radius-md);cursor:pointer;border:1px solid rgba(255,23,68,0.2);" onclick="localStorage.clear();location.reload();">
+                        <h4>Wipe & Factory Reset</h4>
+                        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Clear all shadow state and restart</p>
                     </div>
                 </div>`;
             }
@@ -1557,8 +1576,8 @@ function initUI() {
 
     // Mock Notifications
     const notis = [
-        {title: 'System Update', body: 'TopOS 1.0 is installed successfully.'},
-        {title: 'Security', body: sysSettings.isRooted ? 'Warning: Superuser binary active.' : 'App scanning complete. No threats found.'}
+        {title: 'Crimson Protocol', body: 'TopOS mysterious security matrix online.'},
+        {title: 'Shadow Net', body: sysSettings.isRooted ? 'Superuser shell active & listening.' : 'Encrypted tunnels established.'}
     ];
     const nList = $('noti-list');
     nList.innerHTML = '';
@@ -1572,10 +1591,10 @@ function initUI() {
 
 function promptUninstall(id, name, canUninstall) {
     if(!canUninstall) {
-        Toast.show(`Cannot uninstall system app: ${name}`);
+        Toast.show(`Protected system module: ${name}`);
         return;
     }
-    if(confirm(`Do you want to uninstall ${name}?`)) {
+    if(confirm(`Purge module ${name}?`)) {
         if(id === 'kingroot') {
             sysSettings.kingRootInstalled = false;
             sysSettings.isRooted = false;
@@ -1585,7 +1604,7 @@ function promptUninstall(id, name, canUninstall) {
             sysSettings.customApps = sysSettings.customApps.filter(a => a.id !== id);
         }
         Storage.set('settings', sysSettings);
-        Toast.show(`${name} uninstalled`);
+        Toast.show(`${name} purged`);
         initUI();
     }
 }
@@ -1608,7 +1627,7 @@ $('nav-home-btn').addEventListener('touchend', () => clearTimeout(navTapTimeout)
 
 function showRecentApps() {
     if(AppManager.activeApps.length === 0) {
-        Toast.show("No recent apps");
+        Toast.show("No active memory traces");
         return;
     }
     const ra = $('recent-apps');
@@ -1621,7 +1640,7 @@ function showRecentApps() {
                 <div class="recent-card-title">${app.def.name}</div>
             </div>
             <div class="recent-card-preview"></div>
-            <div class="swipe-up-hint">Swipe up to close</div>
+            <div class="swipe-up-hint">Swipe up to dismiss</div>
         `);
         let startY = 0;
         card.addEventListener('mousedown', e => startY = e.clientY);
@@ -1662,10 +1681,10 @@ document.querySelectorAll('.qs-tile').forEach(t => {
     t.onclick = function() {
         this.classList.toggle('active');
         const name = this.querySelector('span').innerText;
-        Toast.show(`${name} ${this.classList.contains('active') ? 'On' : 'Off'}`);
+        Toast.show(`${name} ${this.classList.contains('active') ? 'Engaged' : 'Disengaged'}`);
     }
 });
-$('btn-clear-noti').onclick = () => { $('noti-list').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text-muted);">No new notifications</div>'; };
+$('btn-clear-noti').onclick = () => { $('noti-list').innerHTML = '<div style="text-align:center;padding:20px;color:var(--text-muted);">No lingering whispers</div>'; };
 
 // --- BOOT PROCESS ---
 window.onload = () => {
@@ -1738,7 +1757,7 @@ document.querySelectorAll('.key').forEach(k => {
                 dots.forEach(d => d.className = 'pin-dot');
                 $('keypad').style.animation = 'bounce 0.3s';
                 setTimeout(() => $('keypad').style.animation = '', 300);
-                Toast.show("Incorrect PIN");
+                Toast.show("Access Denied");
             }
         }
     }
