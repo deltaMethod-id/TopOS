@@ -7,5 +7,5 @@
   "Hosting": "Vercel", 
   "workflows": "codeql", 
   "protocol": "https", 
-  "main_url": "https://top-os.vercel.app"
+  "main_url": "https://tops-os.vercel.app"
 }
